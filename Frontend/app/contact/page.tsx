@@ -157,6 +157,18 @@ export default function ContactPage() {
                 Rajasthan 334001
               </p>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="sm:col-span-2 rounded-3xl overflow-hidden shadow-xl border-8 border-white bg-white"
+            >
+              <img
+                src="/images/visiting-card.jpeg"
+                alt="A1 Dry Clean & Solution Visiting Card"
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
