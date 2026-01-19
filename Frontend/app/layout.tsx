@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   description: "Experience pristine care for every fiber. A1 Dry Clean & Solution provides expert dry cleaning, steam press, and textile care services in Bikaner since 2018.",
   generator: "Next.js",
   keywords: "Dry cleaning Bikaner, laundry services, steam press, textile cleaning, A1 Dry Clean, Bikaner laundry, professional laundry",
+  verification: {
+    google: "QFQoEqytrnzVVSQwMYDKbPmbMndJgX9rSStFmO-XMqM",
+  },
   icons: {
     icon: "/logo.jpg",
     shortcut: "/logo.jpg",
