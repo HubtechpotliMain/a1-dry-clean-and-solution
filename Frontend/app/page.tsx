@@ -4,6 +4,7 @@ import PlanShowcase from '../components/plan-showcase';
 import FeaturesSection from '../components/features-section';
 import TestimonialsSection from '../components/testimonials-section';
 import GallerySection from '../components/gallery-section';
+import VideoSection from '../components/video-section';
 import Footer from '../components/footer';
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       <PlanShowcase />
       <FeaturesSection />
       <GallerySection />
+      <VideoSection />
       <TestimonialsSection />
       <Footer />
     </main>
