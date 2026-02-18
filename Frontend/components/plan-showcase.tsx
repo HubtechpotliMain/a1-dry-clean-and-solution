@@ -9,64 +9,70 @@ import {
   Home,
   Layers,
   ChevronRight,
-  CheckCircle2
+  CheckCircle2,
+  Sofa,
+  Car,
+  Bed,
+  Utensils,
+  Monitor,
+  Bath
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
   {
     id: 1,
-    name: "Dry Cleaning",
-    description: "Premium care for silk, wool, and designer wear using eco-safe solvents.",
-    icon: <Droplets className="w-8 h-8" />,
+    name: "Sofa Dry Cleaning",
+    description: "Deep dry cleaning for all types of leather and fabric sofas.",
+    icon: <Sofa className="w-8 h-8" />,
     color: "bg-blue-500",
     size: "lg",
-    features: ["Silk & Wool", "Designer Wear", "Stain Removal"]
+    features: ["All Sofa Types", "Stain Removal", "Deep Extraction"]
   },
   {
     id: 2,
-    name: "Steam Press",
-    description: "Industrial-grade steam technology for a crisp, wrinkle-free finish.",
-    icon: <Wind className="w-8 h-8" />,
+    name: "Home Deep Cleaning",
+    description: "End-to-end cleaning for your residence, ensuring absolute hygiene.",
+    icon: <Home className="w-8 h-8" />,
     color: "bg-sky-400",
     size: "md",
-    features: ["Instant Freshness", "Fabric Safe"]
+    features: ["Corner-to-Corner", "Spotless Shine"]
   },
   {
     id: 3,
-    name: "Curtain Cleaning",
-    description: "Specialized cleaning for heavy drapes and delicate window treatments.",
-    icon: <Layers className="w-8 h-8" />,
+    name: "Mattress Dry Cleaning",
+    description: "Advanced sanitization to remove dust mites and allergens from beds.",
+    icon: <Bed className="w-8 h-8" />,
     color: "bg-indigo-400",
     size: "md",
-    features: ["Deep Dusting", "Color Protection"]
+    features: ["Anti-Allergen", "Deep Sanitization"]
   },
   {
     id: 4,
-    name: "Shoe Spa",
-    description: "Revive your leather, suede, and designer sneakers to box-fresh condition.",
+    name: "Shoes Cleaning & Spa",
+    description: "Restore your premium footwear - sneakers, leather, and suede.",
     icon: <Footprints className="w-8 h-8" />,
     color: "bg-highlight",
     size: "lg",
-    features: ["Suede Care", "Deodorization", "Sole Restore"]
+    features: ["Sole Whitening", "Suede Care", "Deodorization"]
   },
   {
     id: 5,
-    name: "Sofa & Carpet",
-    description: "Expert home cleaning for upholstered furniture and floor textiles.",
-    icon: <Home className="w-8 h-8" />,
+    name: "Car Interior Spa",
+    description: "Interior dry cleaning and washing for a showroom-like finish.",
+    icon: <Car className="w-8 h-8" />,
     color: "bg-primary-600",
     size: "sm",
-    features: ["Deep Extraction", "Micro-Clean"]
+    features: ["Seat Cleaning", "Dashboard Polish"]
   },
   {
     id: 6,
-    name: "Premium Wash",
-    description: "Gentle automated washing for high-end casuals and daily essentials.",
-    icon: <Sparkles className="w-8 h-8" />,
+    name: "Carpet Dry Cleaning",
+    description: "Professional cleaning for luxury rugs and wall-to-wall carpets.",
+    icon: <Layers className="w-8 h-8" />,
     color: "bg-accent-600",
     size: "sm",
-    features: ["Fabric Softening", "Anti-Bacterial"]
+    features: ["Quick Drying", "Dirt Extraction"]
   }
 ];
 
