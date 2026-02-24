@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Shirt, Sparkles, Clock, ShieldCheck, Waves, Star, Search, Filter, Droplets, Zap, ChevronRight } from 'lucide-react';
+import { Shirt, Sparkles, Clock, ShieldCheck, Waves, Star, Search, Filter, Droplets, Zap, ChevronRight, Bed, Car, Bath, Utensils, Home, Footprints, Layers, Monitor, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
@@ -10,58 +10,111 @@ import { useState } from 'react';
 const services = [
     {
         id: 1,
-        name: 'Premium Dry Cleaning',
-        description: 'Specialized chemical cleaning for delicate fabrics like silk, wool, and designer wear.',
-        features: ['Eco-Safe Solvents', 'Fabric Softening', 'Minor Repairs', 'Luxury Packaging'],
-        icon: <Droplets className="w-6 h-6" />,
+        name: 'Sofa Dry Cleaning',
+        description: 'Professional deep extraction cleaning for all types of sofas - Leather, Fabric, and Velvet.',
+        features: ['Stain Removal', 'Fabric Revitilization', 'Deep Extraction', 'Anti-Allergen Treatment'],
+        icon: <Sofa className="w-6 h-6" />,
         popular: true,
-        tag: 'Best Seller'
+        tag: 'Most Popular'
     },
     {
         id: 2,
-        name: 'Italian Steam Press',
-        description: 'Crisp, wrinkle-free finishing using advanced Italian boiler technology.',
-        features: ['Vacuum Tables', 'Precision Crease', 'Shape Retention', 'Hanger Packaging'],
-        icon: <Zap className="w-6 h-6" />,
-        popular: false,
-        tag: 'Quick'
-    },
-    {
-        id: 3,
-        name: 'Designer Shoe Spa',
-        description: 'Deep restoration for your premium sneakers, leathers, and suede footwear.',
-        features: ['Antibacterial Wash', 'Sole Whitening', 'Deodorizing', 'Lace Cleaning'],
-        icon: <Sparkles className="w-6 h-6" />,
+        name: 'Carpet Dry Cleaning',
+        description: 'Industrial-grade dry cleaning for premium carpets, rugs, and office flooring.',
+        features: ['Deep Dust Removal', 'Color Protection', 'Quick Drying', 'Odor Neutralization'],
+        icon: <Layers className="w-6 h-6" />,
         popular: false,
         tag: 'Premium'
     },
     {
-        id: 4,
-        name: 'Curtain Restoration',
-        description: 'Professional cleaning for heavy drapes, blinds, and blackout curtains.',
-        features: ['Dust Removal', 'UVD Infection', 'Ironing', 'On-Site Pickup'],
-        icon: <Waves className="w-6 h-6" />,
+        id: 3,
+        name: 'Mattress Dry Cleaning',
+        description: 'Advanced sanitization and cleaning to remove dust mites and allergens from your mattress.',
+        features: ['Steam Sanitization', 'Dust Mite Removal', 'Stain Protection', 'Freshness Guard'],
+        icon: <Bed className="w-6 h-6" />,
         popular: false,
-        tag: 'Home'
+        tag: 'Hygienic'
+    },
+    {
+        id: 4,
+        name: 'Office Rolling Chair Dry Cleaning',
+        description: 'Keep your workspace hygiene intact with specialized cleaning for all types of office chairs.',
+        features: ['Fabric Restoration', 'Base & Wheel Polish', 'Antibacterial Treatment', 'Fast Drying'],
+        icon: <Monitor className="w-6 h-6" />,
+        popular: false,
+        tag: 'Commercial'
     },
     {
         id: 5,
-        name: 'Sofa & Carpet Care',
-        description: 'Industrial extraction cleaning for home upholstery and expensive carpets.',
-        features: ['Deep Extraction', 'Stain Removal', 'Fresh Scent', 'Quick Drying'],
-        icon: <ShieldCheck className="w-6 h-6" />,
+        name: 'Dining Chair Dry Cleaning',
+        description: 'Deep cleaning and stain removal for elegant dining chair upholstery.',
+        features: ['Food Stain Removal', 'Fabric Care', 'Softener Treatment', 'Sanitized Finish'],
+        icon: <Utensils className="w-6 h-6" />,
         popular: false,
-        tag: 'Deep Clean',
-        image: '/images/sofa-cleaning.jpeg'
+        tag: 'Dining'
     },
     {
         id: 6,
-        name: 'Wedding Wear Spa',
-        description: 'Preserve your heavy lehengas, sherwanis and suits with specialized care.',
-        features: ['Stone Protection', 'Oxidation Removal', 'Luxury Box', 'Memory Guard'],
-        icon: <Star className="w-6 h-6" />,
+        name: 'Cushion Dry Cleaning',
+        description: 'Specialized care for living room cushions and decorative pillows.',
+        features: ['Gentle Fabric Care', 'Deep Cleaning', 'Shape Retention', 'Fragrance Finish'],
+        icon: <Sparkles className="w-6 h-6" />,
         popular: false,
-        tag: 'Luxury'
+        tag: 'Home Care'
+    },
+    {
+        id: 7,
+        name: 'Car Interior Dry & Wash',
+        description: 'Complete interior restoration including seats, roof, dashboard, and carpets.',
+        features: ['Dashboard Polishing', 'Seat Dry Cleaning', 'Floor Vacuuming', 'AC Vent Cleaning'],
+        icon: <Car className="w-6 h-6" />,
+        popular: true,
+        tag: 'Automotive'
+    },
+    {
+        id: 8,
+        name: 'Home Deep Cleaning',
+        description: 'End-to-end cleaning solution for your residence, ensuring a spotless environment.',
+        features: ['Floor Scrubbing', 'Window Cleaning', 'Furniture Polishing', 'Deep Dusting'],
+        icon: <Home className="w-6 h-6" />,
+        popular: true,
+        tag: 'Top Rated'
+    },
+    {
+        id: 9,
+        name: 'Kitchen Deep Cleaning',
+        description: 'Heavy degreasing and sanitization of kitchen surfaces, tiles, and fixtures.',
+        features: ['Grease Removal', 'Tile Grout Cleaning', 'Acid-Free Solutions', 'Exhaust Fan Cleaning'],
+        icon: <Utensils className="w-6 h-6" />,
+        popular: false,
+        tag: 'Specialized'
+    },
+    {
+        id: 10,
+        name: 'Bathroom Deep Cleaning',
+        description: 'Deep scrubbing and disinfection of tiles, taps, floors, and sanitary ware.',
+        features: ['Hard Water Removal', 'Sanitization', 'Tap & Shower Polish', 'Toxin-Free Agents'],
+        icon: <Bath className="w-6 h-6" />,
+        popular: false,
+        tag: 'Hygiene'
+    },
+    {
+        id: 11,
+        name: 'Water Tank Cleaning',
+        description: 'Professional cleaning of overhead and underground water tanks for safe water storage.',
+        features: ['Sludge Removal', 'UV Radiation', 'Antibacterial Spray', 'Safe for Drinking'],
+        icon: <Droplets className="w-6 h-6" />,
+        popular: false,
+        tag: 'Utility'
+    },
+    {
+        id: 12,
+        name: 'Shoes Cleaning & Spa',
+        description: 'Premium restoration for sneakers, leathers, and suede footwear.',
+        features: ['Antibacterial Wash', 'Sole Whitening', 'Deodorization', 'Lace Cleaning'],
+        icon: <Footprints className="w-6 h-6" />,
+        popular: false,
+        tag: 'Footwear'
     }
 ];
 
@@ -114,12 +167,11 @@ export default function ServicesPage() {
                             <span className="text-primary-600 font-jakarta text-xs font-bold uppercase tracking-widest">A1 Service Menu</span>
                         </div>
                         <h1 className="text-5xl md:text-8xl font-outfit font-extrabold text-secondary-900 leading-[1.1] tracking-tight">
-                            Crafting Flawless <br />
-                            <span className="text-gradient">Garment Care.</span>
+                            Smart <span className="text-gradient">Cleaning Solutions.</span>
                         </h1>
                         <p className="text-lg md:text-xl text-secondary-600 font-jakarta max-w-2xl mx-auto leading-relaxed">
-                            Explore our range of professional cleaning services tailored for every
-                            piece of your wardrobe. From daily shirts to wedding couture.
+                            Professional dry cleaning and deep restoration for your home, office, and car interiors.
+                            Premium care for every surface you touch.
                         </p>
                     </motion.div>
 
@@ -135,7 +187,7 @@ export default function ServicesPage() {
                         </div>
                         <input
                             type="text"
-                            placeholder="Search for a service... (e.g. Shoes, Wedding)"
+                            placeholder="Search for a service... (e.g. Sofa, Carpet, Home)"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full bg-white border border-primary-100 rounded-3xl py-6 pl-16 pr-8 text-secondary-900 font-jakarta shadow-xl focus:outline-none focus:ring-4 focus:ring-primary-100 transition-all placeholder:text-secondary-300"
@@ -160,16 +212,6 @@ export default function ServicesPage() {
                             {service.popular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">
                                     Most Trusted
-                                </div>
-                            )}
-
-                            {service.image && (
-                                <div className="relative w-full h-48 rounded-2xl overflow-hidden mb-6">
-                                    <img
-                                        src={service.image}
-                                        alt={service.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
                                 </div>
                             )}
 
