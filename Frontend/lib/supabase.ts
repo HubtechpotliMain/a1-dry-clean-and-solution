@@ -3,15 +3,22 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-if (!supabaseUrl) {
-  throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL environment variable')
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey)
+
+// Don't throw at import time: this module is loaded while Next.js prerenders
+// every page, so a hard error here fails the whole build. Fall back to
+// placeholders and warn instead; auth calls will fail until the real values
+// are set (NEXT_PUBLIC_* vars are inlined at build time, so redeploy after).
+if (!isSupabaseConfigured) {
+  console.warn(
+    'Supabase is not configured: set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.'
+  )
 }
 
-if (!supabaseAnonKey) {
-  throw new Error('Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable')
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(
+  supabaseUrl || 'https://placeholder.supabase.co',
+  supabaseAnonKey || 'placeholder-anon-key'
+)
 
 // Database types
 export interface Database {
